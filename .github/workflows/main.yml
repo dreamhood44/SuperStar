@@ -22,7 +22,7 @@ jobs:
       - name: 安装依赖包
         run: | # 安装依赖包
           pip install -r ./requirements.txt 
-          9
+         
       
       - name: Run main.py
         run: python main.py -u 15660669985 -p 1357924680Aa* -l 255062311 #课程id，默认为心理课的
