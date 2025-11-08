@@ -54,7 +54,7 @@ class CacheDAO:
 
 
 class Tiku:
-    CONFIG_PATH = "config.ini"  # 默认配置文件路径
+    CONFIG_PATH = "config_template.ini"  # 默认配置文件路径
     DISABLE = False     # 停用标志
     SUBMIT = False      # 提交标志
     COVER_RATE = 0.8    # 覆盖率
