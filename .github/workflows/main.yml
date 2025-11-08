@@ -22,7 +22,14 @@ jobs:
       - name: 安装依赖包
         run: | # 安装依赖包
           pip install -r ./requirements.txt 
-         
+         # 新增步骤：将Secrets中的Token写入配置文件
+      - name: 配置题库Token
+        run: |
+          # 替换config_template.ini中的tokens字段为Secrets中的值
+          sed -i "s/tokens=.*/tokens=${{ secrets.TIKU_TOKENS }}/" config_template.ini
+          # 可选：开启自动提交（根据需求设置，默认false）
+          sed -i "s/submit=false/submit=true/" config_template.ini
+      
       
       - name: Run main.py
         run: python main.py -u 19236460072 -p Wyx200702 -l 255062311 #课程id，默认为心理课的
